@@ -21,8 +21,9 @@ ein Bucklkub-Management-Tool mit folgenden Funktionalitäten sein:
 
 ## Project confirmation
 
-< to be filled by lecturer>
+Confirmed.
 
+Coole Idee! Ich könnte ein paar Buchvorschläge für SW-Entwicklung beisteuern :-)
 
 ## Project delivery <to be filled by student>
 
