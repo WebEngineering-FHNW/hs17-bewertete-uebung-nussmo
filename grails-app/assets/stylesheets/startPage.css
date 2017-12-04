@@ -17,3 +17,7 @@
 #mainTable tr.header {
     background-color: #f1f1f1;
 }
+
+#title {
+    text-align: center;
+}

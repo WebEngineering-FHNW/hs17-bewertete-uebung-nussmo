@@ -6,9 +6,12 @@
         Buchklub
     </title>
 
-    <asset:stylesheet src="table.css"/>
+    <asset:stylesheet src="startPage.css"/>
 </head>
 <body>
+    <div id="title" class="title-container">
+        <asset:image src="IMG_4662.JPG" width="360"/>
+    </div>
     <table id="mainTable">
         <tr class="header">
             <th style="width:20%;">Datum</th>
