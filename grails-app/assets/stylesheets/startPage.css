@@ -21,3 +21,73 @@
 #title {
     text-align: center;
 }
+
+#newEventForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#newEventForm-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    cursor: pointer;
+}
+
+input, textarea, select, button {
+    margin: 1%;
+    display: block;
+}
+
+#newEventButton{
+    float: right;
+    width: 20%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 6px;
+}
+
+#newEventButton:hover{
+    background-color: #f1f1f1;
+}
+
+.speichern{
+    float: right;
+    margin: -1%;
+    width: 20%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 6px;
+}
+
+.speichern:hover{
+    background-color: #f1f1f1;
+}
+
+#booktitle, #bookauthor {
+   width: 60%;
+}
+
+#date, #names {
+    width : 30%;
+}
