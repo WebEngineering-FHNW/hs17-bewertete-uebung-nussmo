@@ -4,8 +4,12 @@ class BuchklubController {
 
     //static scaffold = Buchklubtreffen
 
-    def index() {
+    def startPage() {
         render view:'startPage', model: [treffen: Buchklubtreffen.list()]
+    }
+
+    def showPage() {
+        render view: "showPage";
     }
 
     def saveevent() {

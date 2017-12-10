@@ -5,8 +5,12 @@
     <title>
         Buchklub
     </title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="startPage.css"/>
     <asset:javascript src="startPage.js"/>
+    <asset:javascript src="createPage.js"/>
+
 
 </head>
 <body>
@@ -33,12 +37,15 @@
                         <th style="font-weight: lighter">${t.datum.dateString}</th>
                         <th style="font-weight: lighter">${t.buch.titel} von ${t.buch.autor}</th>
                         <th style="font-weight: lighter">${t.person.name}</th>
-                        <th style="font-weight: lighter">link</th>
+                        <th style="font-weight: lighter">
+                            <a class="show" href="${createLink(uri: '/buchklub/showPage')}">
+                                <span class="glyphicon glyphicon-zoom-in"></span>
+                            </a>
+                        </th>
                     </tr>
                 </g:each>
             </table>
         </div>
     </div>
-
 </body>
 </html>
