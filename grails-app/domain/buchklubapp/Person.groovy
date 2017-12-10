@@ -9,4 +9,8 @@ class Person {
 	String toString() {
 		return name
 	}
+
+	static constraints = {
+		name blank: false, unique: true
+	}
 }

@@ -13,4 +13,5 @@ class BuchklubController {
         buchklubtreffen.save()
         render view:'startPage', model: [treffen: Buchklubtreffen.list()]
     }
+
 }

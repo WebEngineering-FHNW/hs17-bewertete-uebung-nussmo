@@ -13,7 +13,44 @@
         function closeForm(){
             document.getElementById("newEventForm").style.display = "none";
         }
-    </script>
+        function checkNotNull() {
+            var booktitle = document.getElementById("booktitle").value;
+            var author = document.getElementById("bookauthor").value;
+            var name = document.getElementById("names").value;
+            if(booktitle==""){
+                document.getElementById('booktitle').style.borderColor = "red";
+            }
+            if (author=="") {
+                document.getElementById('bookauthor').style.borderColor = "red";
+            }
+            if(name == ""){
+                document.getElementById('names').style.borderColor = "red";
+            }
+            if(booktitle!=""){
+                document.getElementById('booktitle').style.border = "1px solid";
+                document.getElementById('booktitle').style.borderColor = "green";
+            }
+            if (author!="") {
+                document.getElementById('bookauthor').style.border = "1px solid";
+                document.getElementById('bookauthor').style.borderColor = "green";
+            }
+            if(name!=""){
+                document.getElementById('names').style.borderColor = "green";
+            }
+        }
+
+        function checkDate() {
+            var date = document.getElementById("date").value;
+            if(date != ""){
+                var futureday = new Date(date);
+                var today = new Date();
+                if(futureday < today){
+                    document.getElementById("date").style.borderColor = "red";
+                }
+            }
+        }
+
+</script>
 </head>
 <body>
 
@@ -31,26 +68,25 @@
                         <h2>Neuen Event erfassen</h2>
                         <p>Bitte gebt das Datum, das Buch und euren Namen an. Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
                         <section>
-
                                 <legend>Buch</legend>
                                 <ul>
                                     <li>
                                         <label>Titel: * </label>
-                                        <input id = "booktitle" type="text">
+                                        <input id = "booktitle" type="text", required>
                                     </li>
                                     <li>
                                         <label>Author: * </label>
-                                        <input id="bookauthor" type="text">
+                                        <input id="bookauthor" type="text" required>
                                     </li>
                                 </ul>
                             <p>
                                 <label>Datum: </label>
-                                <input id="date" type="date">
+                                <input id="date" type="date" onchange="checkDate()">
                             </p>
                             <p>
                                 <label>Name: * </label>
-                                <select id="names" name="namen">
-                                    <option value="lena">--</option>
+                                <select id="names" name="namen" required>
+                                    <option disabled selected value>--</option>
                                     <option value="lena">Lena</option>
                                     <option value="linda">Linda</option>
                                     <option value="lara">Lara</option>

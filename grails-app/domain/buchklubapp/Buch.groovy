@@ -12,5 +12,7 @@ class Buch {
         return titel + ", " + autor
     }
     static constraints = {
+        titel blank: false, unique: true
+        autor blank: false
     }
 }

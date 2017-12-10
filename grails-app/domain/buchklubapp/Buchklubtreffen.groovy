@@ -14,5 +14,7 @@ class Buchklubtreffen {
     }
 
     static constraints = {
+        buch nullable: false, unique: true
+        person nullable: false
     }
 }
