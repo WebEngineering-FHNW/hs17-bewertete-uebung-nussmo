@@ -1,0 +1,40 @@
+#title {
+    text-align: center;
+}
+
+#updateEventForm{
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+#updateEventForm-content {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 55%;
+}
+
+input, textarea, select, button {
+    display: block;
+}
+
+.updateButton{
+    float: right;
+    margin: -2%;
+    width: 20%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 6px;
+}
+
+.updateButton:hover{
+    background-color: #f1f1f1;
+}
+
+#booktitle, #bookauthor, #bookdescription, #date, #names, #meetingpoint{
+    width: 70%;
+}

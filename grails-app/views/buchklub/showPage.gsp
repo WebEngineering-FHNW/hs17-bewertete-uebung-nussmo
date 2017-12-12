@@ -24,9 +24,8 @@
         <h3>Organisatorisches</h3>
         <p>Verantwortlich: ${treffen.person.name}</p>
         <p>Treffpunkt (optional): ${treffen.treffpunkt}</p>
-        <a href="${treffen.doodlelink}">Doodlelink zur Terminfindung (optional) </a>
-
-            <table id="mainTable">
+        <div id="navigation-content">
+            <table id="navigationTable">
                 <tr>
                     <th>
                         <a class="home" href="${createLink(controller: 'buchklub', action: 'startPage')}">
@@ -39,8 +38,8 @@
                         </a>
                     </th>
                 </tr>
-
             </table>
+        </div>
     </div>
 
 </body>

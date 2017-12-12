@@ -2,3 +2,14 @@
     text-align: center;
 }
 
+#navigationTable{
+    position:fixed;
+    left:45%;
+    width: 20%;
+    margin: 5px;
+    font-size: 18px;
+}
+
+#iconhome, #iconupdate{
+    color: #343437;
+}

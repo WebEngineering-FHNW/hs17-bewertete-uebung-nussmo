@@ -32,14 +32,22 @@ class BuchklubController {
     }
 
     def updateevent(){
-        if(!params.id){
-            render view: "updatePage", model: [treffen: Buchklubtreffen.findById(id)];
-            return
-        }
+        Buchklubtreffen treffen = Buchklubtreffen.findById(params.id)
+        //treffen found?
+        Person p = Person.findByName(params.namen)
+        Buch b = Buch.findByTitel(params.booktitle)
+        b.setAutor(params.bookauthor)
+        b.setBeschreibung(params.bookdescription)
+        b.save(flush: true)
+        Date d = new SimpleDateFormat("yyyy-MM-dd").parse params.date
 
-        def treffen = Buchklubtreffen.get(params.id)
-
-
+        treffen.setPerson(p)
+        treffen.setBuch(b)
+        treffen.setDatum(d)
+        treffen.setTreffpunkt(params.meetingpoint)
+        treffen.setDoodlelink(params.doodlelink)
+        println(treffen)
+        treffen.save(flush: true)
         render view: "startPage", model: [treffen: Buchklubtreffen.list()]
     }
 
