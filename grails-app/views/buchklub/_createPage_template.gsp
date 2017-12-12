@@ -1,11 +1,8 @@
-<head>
-    <asset:javascript src="createPage.js"/>
-</head>
-<body>
 <div id="newEventForm">
     <div id="newEventForm-content">
         <span class="close" onclick="closeForm()">&times;</span>
-        <form action = "saveevent">
+
+        <g:form controller="buchklub" action = "saveevent">
             <h2>Neuen Event erfassen</h2>
             <p>Bitte gebt das Datum, das Buch und euren Namen an. Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
             <section>
@@ -40,10 +37,7 @@
             <section>
                 <p> <button class="speichern" type="submit">Speichern</button> </p>
             </section>
-        </form>
+        </g:form>
     </div>
 </div>
 
-
-
-</body>

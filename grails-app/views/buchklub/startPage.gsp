@@ -15,9 +15,7 @@
 </head>
 <body>
 
-    <div id="title" class="title-container">
-        <asset:image src="IMG_4662.JPG" width="360"/>
-    </div>
+    <tmpl:headerPage_template/>
 
     <div id="events" class="table-container">
         <div id="newEvent">
@@ -27,10 +25,12 @@
         <div id="pastEvents">
             <table id="mainTable">
                 <tr class="header">
-                    <th style="width:20%;">Datum</th>
+                    <th style="width:19%;">Datum</th>
                     <th style="width:40%;">Buch</th>
                     <th style="width:20%;">Name</th>
-                    <th style="width:20%">Event</th>
+                    <th style="width:7%"></th>
+                    <th style="width:7%"></th>
+                    <th style="width:7%"></th>
                 </tr>
                 <g:each var="t" in="${treffen}">
                     <tr class="content">
@@ -38,8 +38,18 @@
                         <th style="font-weight: lighter">${t.buch.titel} von ${t.buch.autor}</th>
                         <th style="font-weight: lighter">${t.person.name}</th>
                         <th style="font-weight: lighter">
-                            <a class="show" href="${createLink(uri: '/buchklub/showPage')}">
+                            <a class="show" href="${createLink(controller: 'buchklub', action: 'showPage', params: [id:t.id])}">
                                 <span class="glyphicon glyphicon-zoom-in"></span>
+                            </a>
+                        </th>
+                        <th style="font-weight: lighter">
+                            <a class="update" href="${createLink(controller: 'buchklub', action: 'updatePage', params: [id:t.id])}">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        </th>
+                        <th style="font-weight: lighter">
+                            <a class="delete" href="${createLink(controller: 'buchklub', action: 'delete', params: [id:t.id])}">
+                                <span class="glyphicon glyphicon-remove"></span>
                             </a>
                         </th>
                     </tr>
