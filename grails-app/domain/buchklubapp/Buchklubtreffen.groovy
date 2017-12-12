@@ -19,6 +19,7 @@ class Buchklubtreffen {
     static constraints = {
         buch nullable: false, unique: true
         person nullable: false
+        datum nullable: false
         treffpunkt nullable: true
         doodlelink nullable: true
     }

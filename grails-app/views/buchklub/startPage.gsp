@@ -29,11 +29,11 @@
                                 <ul>
                                     <li>
                                         <label>Titel: * </label>
-                                        <input id = "booktitle" type="text", required>
+                                        <input id = "booktitle" name="booktitle" type="text" required>
                                     </li>
                                     <li>
                                         <label>Author: * </label>
-                                        <input id="bookauthor" type="text" required>
+                                        <input id="bookauthor" name="bookauthor" type="text" required>
                                     </li>
                                 </ul>
                         </section>
@@ -41,19 +41,19 @@
                             <legend>Organisatorisches</legend>
                             <ul>
                                 <li>
-                                    <label>Datum: </label>
-                                    <input id="date" type="date" onchange="checkDate()">
+                                    <label>Datum: * </label>
+                                    <input id="date" name = "date" type="date" onchange="checkDate()">
                                 </li>
                                 <li>
                                     <label>Name: * </label>
                                     <select id="names" name="namen" required>
                                         <option disabled selected value>--</option>
-                                        <option value="lena">Lena</option>
-                                        <option value="linda">Linda</option>
-                                        <option value="lara">Lara</option>
-                                        <option value="tina">Tina</option>
-                                        <option value="fabi">Fabi</option>
-                                        <option value="moni">Moni</option>
+                                        <option value="Lena">Lena</option>
+                                        <option value="Linda">Linda</option>
+                                        <option value="Lara">Lara</option>
+                                        <option value="Tina">Tina</option>
+                                        <option value="Fabi">Fabi</option>
+                                        <option value="Moni">Moni</option>
                                     </select>
                                 </li>
                             </ul>

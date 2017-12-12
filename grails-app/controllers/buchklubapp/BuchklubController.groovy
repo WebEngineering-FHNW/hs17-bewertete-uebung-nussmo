@@ -1,5 +1,7 @@
 package buchklubapp
 
+import java.text.SimpleDateFormat
+
 class BuchklubController {
 
     static scaffold = Buchklubtreffen
@@ -17,8 +19,15 @@ class BuchklubController {
     }
 
     def saveevent() {
+        Person p = Person.findByName(params.namen)
+        // p found?
+        Buch b = new Buch(titel: params.booktitle , autor: params.bookauthor).save()
+        Date d = new SimpleDateFormat("yyyy-MM-dd").parse params.date
         def buchklubtreffen = new Buchklubtreffen(params)
-        buchklubtreffen.save()
+        buchklubtreffen.setPerson(p)
+        buchklubtreffen.setBuch(b)
+        buchklubtreffen.setDatum(d)
+        buchklubtreffen.save(failOnError: true)
         render view:'startPage', model: [treffen: Buchklubtreffen.list()]
     }
 
