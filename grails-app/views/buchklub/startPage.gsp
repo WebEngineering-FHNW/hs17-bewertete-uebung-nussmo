@@ -9,8 +9,6 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="startPage.css"/>
     <asset:javascript src="startPage.js"/>
-    <asset:javascript src="createPage.js"/>
-
 
 </head>
 <body>
@@ -20,7 +18,52 @@
     <div id="events" class="table-container">
         <div id="newEvent">
             <button id="newEventButton" onclick="createNewEvent()">Neuer Event</button>
-            <tmpl:createPage_template/>
+            <div id="newEventForm">
+                <div id="newEventForm-content">
+                    <span class="close" onclick="closeForm()">&times;</span>
+                    <g:form controller="buchklub" action = "saveevent">
+                        <h2>Neuen Event erfassen</h2>
+                        <p>Bitte gebt das Datum, das Buch und euren Namen an. Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
+                        <section>
+                                <legend>Buch</legend>
+                                <ul>
+                                    <li>
+                                        <label>Titel: * </label>
+                                        <input id = "booktitle" type="text", required>
+                                    </li>
+                                    <li>
+                                        <label>Author: * </label>
+                                        <input id="bookauthor" type="text" required>
+                                    </li>
+                                </ul>
+                        </section>
+                        <section>
+                            <legend>Organisatorisches</legend>
+                            <ul>
+                                <li>
+                                    <label>Datum: </label>
+                                    <input id="date" type="date" onchange="checkDate()">
+                                </li>
+                                <li>
+                                    <label>Name: * </label>
+                                    <select id="names" name="namen" required>
+                                        <option disabled selected value>--</option>
+                                        <option value="lena">Lena</option>
+                                        <option value="linda">Linda</option>
+                                        <option value="lara">Lara</option>
+                                        <option value="tina">Tina</option>
+                                        <option value="fabi">Fabi</option>
+                                        <option value="moni">Moni</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <p> <button class="speichern" type="submit" onclick="checkNotNull">Speichern</button> </p>
+                        </section>
+                    </g:form>
+                </div>
+            </div>
         </div>
         <div id="pastEvents">
             <table id="mainTable">
@@ -39,17 +82,17 @@
                         <th style="font-weight: lighter">${t.person.name}</th>
                         <th style="font-weight: lighter">
                             <a class="show" href="${createLink(controller: 'buchklub', action: 'showPage', params: [id:t.id])}">
-                                <span class="glyphicon glyphicon-zoom-in"></span>
+                                <span class="glyphicon glyphicon-zoom-in" id="iconshow"></span>
                             </a>
                         </th>
                         <th style="font-weight: lighter">
                             <a class="update" href="${createLink(controller: 'buchklub', action: 'updatePage', params: [id:t.id])}">
-                                <span class="glyphicon glyphicon-edit"></span>
+                                <span class="glyphicon glyphicon-edit" id="iconupdate"></span>
                             </a>
                         </th>
                         <th style="font-weight: lighter">
                             <a class="delete" href="${createLink(controller: 'buchklub', action: 'delete', params: [id:t.id])}">
-                                <span class="glyphicon glyphicon-remove"></span>
+                                <span class="glyphicon glyphicon-remove" id="iconremove"></span>
                             </a>
                         </th>
                     </tr>
@@ -57,5 +100,17 @@
             </table>
         </div>
     </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
