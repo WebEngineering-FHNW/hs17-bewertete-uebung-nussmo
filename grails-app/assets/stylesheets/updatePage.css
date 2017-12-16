@@ -38,3 +38,9 @@ input, textarea, select, button {
 #booktitle, #bookauthor, #bookdescription, #date, #names, #meetingpoint{
     width: 70%;
 }
+
+#iconremove{
+    color: #343437;
+    float: right;
+    margin-top: -3%;
+}

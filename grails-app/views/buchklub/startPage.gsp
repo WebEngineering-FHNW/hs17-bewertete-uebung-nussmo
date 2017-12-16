@@ -42,7 +42,7 @@
                             <ul>
                                 <li>
                                     <label>Datum: * </label>
-                                    <input id="date" name = "date" type="date" onchange="checkDate()">
+                                    <input id="date" name = "date" type="date" onchange="checkDate()" required>
                                 </li>
                                 <li>
                                     <label>Name: * </label>
@@ -59,7 +59,7 @@
                             </ul>
                         </section>
                         <section>
-                            <p> <button class="speichern" type="submit" onclick="checkNotNull">Speichern</button> </p>
+                            <p> <button class="speichern" type="submit" onclick="checkNotNull()">Speichern</button> </p>
                         </section>
                     </g:form>
                 </div>

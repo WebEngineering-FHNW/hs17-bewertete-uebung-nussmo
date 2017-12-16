@@ -5,7 +5,8 @@
     <title>
         Buchklub
     </title>
-
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="updatePage.css"/>
 
     <script language="JavaScript">
@@ -43,8 +44,10 @@
 
     <div id="updateEventForm">
         <div id="updateEventForm-content">
-
             <g:form controller="buchklub" action = "updateevent">
+                <a class="delete" href="${createLink(controller: 'buchklub', action: 'startPage')}">
+                    <span class="glyphicon glyphicon-remove" id="iconremove"></span>
+                </a>
                 <h2>Event vom ${treffen.datum.dateString} bearbeiten</h2>
                 <p>Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
                 <section>

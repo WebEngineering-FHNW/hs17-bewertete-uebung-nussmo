@@ -3,11 +3,11 @@
 }
 
 #navigationTable{
-    position:fixed;
+    position: relative;
     left:45%;
     width: 20%;
-    margin: 5px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 25px;
 }
 
 #iconhome, #iconupdate{
