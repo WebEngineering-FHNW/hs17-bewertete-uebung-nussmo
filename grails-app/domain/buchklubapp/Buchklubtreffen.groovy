@@ -10,10 +10,9 @@ class Buchklubtreffen {
     Buch buch
     Date datum
     String treffpunkt
-    String doodlelink
 
     String toString() {
-        return person.toString() + datum.toString() + buch.toString() + treffpunkt + doodlelink
+        return person.toString() + datum.toString() + buch.toString() + treffpunkt
     }
 
     static constraints = {
@@ -21,6 +20,5 @@ class Buchklubtreffen {
         person nullable: false
         datum nullable: false
         treffpunkt nullable: true
-        doodlelink nullable: true
     }
 }

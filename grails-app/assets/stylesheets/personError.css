@@ -1,0 +1,15 @@
+#title, #person-error {
+    text-align: center;
+}
+
+#navigationTable{
+    position: relative;
+    left:50%;
+    width: 20%;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#iconhome, #iconupdate{
+    color: #343437;
+}

@@ -21,13 +21,31 @@ class BuchklubController {
     def saveevent() {
         Person p = Person.findByName(params.namen)
         // p found?
+        if(p == null){
+            render view:'personError';
+            return
+        }
         Buch b = new Buch(titel: params.booktitle , autor: params.bookauthor).save()
-        Date d = new SimpleDateFormat("yyyy-MM-dd").parse params.date
+        if(b == null){
+            render view: 'bookError';
+            return
+        }
+        Date d;
+        try {
+            d = new SimpleDateFormat("yyyy-MM-dd").parse params.date
+        }catch(err) {
+            render view: 'dateError';
+            return
+        }
+        if(d == null){
+            render view: 'dateError';
+            return
+        }
         def buchklubtreffen = new Buchklubtreffen(params)
         buchklubtreffen.setPerson(p)
         buchklubtreffen.setBuch(b)
         buchklubtreffen.setDatum(d)
-        buchklubtreffen.save(failOnError: true)
+        buchklubtreffen.save()
         render view:'startPage', model: [treffen: Buchklubtreffen.list()]
     }
 
@@ -45,7 +63,6 @@ class BuchklubController {
         treffen.setBuch(b)
         treffen.setDatum(d)
         treffen.setTreffpunkt(params.meetingpoint)
-        treffen.setDoodlelink(params.doodlelink)
         println(treffen)
         treffen.save(flush: true)
         render view: "startPage", model: [treffen: Buchklubtreffen.list()]

@@ -11,6 +11,6 @@ class Person {
 	}
 
 	static constraints = {
-		name blank: false, unique: true
+		name nullable: false, unique: true
 	}
 }
