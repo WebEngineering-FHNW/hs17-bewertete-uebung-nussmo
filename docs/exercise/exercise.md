@@ -31,7 +31,7 @@ How to start the project: (if other than `grailsw run-app`)
 
 How to test the project:  (if other than `grailsw test-app`)
 
-Project description:      (if other than `/index.html`)
+Project description: /static/DescriptionBuchklubapp.html
 
 External contributions:
 
