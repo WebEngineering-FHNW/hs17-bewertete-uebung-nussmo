@@ -9,35 +9,9 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="updatePage.css"/>
     <asset:javascript src="updatePage.js"/>
-    <script language="JavaScript">
-    function fillFields() {
-        document.getElementById("booktitle").value = "${treffen.buch.titel}";
-        document.getElementById("bookauthor").value = "${treffen.buch.autor}";
-        document.getElementById("bookdescription").value = "${treffen.buch.beschreibung}";
-        //https://stackoverflow.com/questions/1001937/auto-insert-date-and-time-in-form-input-field
-        var date = "${treffen.datum.dateString}";
-        var day = date.substr(0,2);
-        var month = date.substr(3,2);
-        var year = date.substr(6,2);
-        year = "20" + year;
-        var tempdate = year + "-" + month + "-" + day;
-        document.getElementById("date").value = tempdate;
-        //https://stackoverflow.com/questions/7373058/changing-the-selected-option-of-an-html-select-element
-        var tempname = "${treffen.person.name}";
-        var selection = document.getElementById("names");
-        var options = selection.options;
-        for(var o, j = 0; o = options[j]; j++){
-            if(o.value == tempname){
-                selection.selectedIndex = j;
-                break;
-            }
-        }
-        document.getElementById("meetingpoint").value = "${treffen.treffpunkt}";
-    }
-    </script>
 
 </head>
-<body onload="fillFields()">
+<body onload="fillFields('${treffen.buch.titel}', '${treffen.buch.autor}', '${treffen.buch.beschreibung}', '${treffen.datum.dateString}', '${treffen.person.name}', '${treffen.treffpunkt}')">
 
     <tmpl:headerPage_template/>
 
