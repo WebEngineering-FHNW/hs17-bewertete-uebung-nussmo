@@ -8,7 +8,7 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="updatePage.css"/>
-    <asset:javascript src="updatePage.js"/>
+    <asset:javascript src="buchklubapp.js"/>
 
 </head>
 <body onload="fillFields('${treffen.buch.titel}', '${treffen.buch.autor}', '${treffen.buch.beschreibung}', '${treffen.datum.dateString}', '${treffen.person.name}', '${treffen.treffpunkt}')">
@@ -28,14 +28,14 @@
                     <ul>
                         <li>
                             <label>Beschreibung:  </label>
-                            <textarea id="bookdescription" name = "bookdescription" onchange="checkOk()" rows="4" cols="50"></textarea>
+                            <textarea id="bookdescription" name = "bookdescription" onchange="checkOkUpdate()" rows="4" cols="50"></textarea>
                         </li>
                     </ul>
                     <tmpl:organisation_template/>
                     <ul>
                         <li>
                             <label>Treffpunkt</label>
-                            <input id="meetingpoint" name="meetingpoint" type="text" onchange="checkOk()">
+                            <input id="meetingpoint" name="meetingpoint" type="text" onchange="checkOkUpdate()">
                         </li>
                     </ul>
                     <ul>
@@ -43,7 +43,7 @@
                     </ul>
                 </section>
                 <section>
-                    <p> <button class="updateButton" type="submit" onclick="checkNotNullAndLength()">Speichern</button> </p>
+                    <p> <button class="updateButton" type="submit" onclick="checkNotNullAndLengthUpdate()">Speichern</button> </p>
                 </section>
             </g:form>
         </div>

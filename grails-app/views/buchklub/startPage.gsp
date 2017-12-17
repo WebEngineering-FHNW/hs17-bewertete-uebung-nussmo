@@ -8,7 +8,7 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="startPage.css"/>
-    <asset:javascript src="startPage.js"/>
+    <asset:javascript src="buchklubapp.js"/>
 
 </head>
 <body>
