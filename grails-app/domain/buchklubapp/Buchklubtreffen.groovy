@@ -19,6 +19,6 @@ class Buchklubtreffen {
         buch nullable: false, unique: true
         person nullable: false
         datum nullable: false
-        treffpunkt nullable: true
+        treffpunkt nullable: true, maxSize: 255
     }
 }

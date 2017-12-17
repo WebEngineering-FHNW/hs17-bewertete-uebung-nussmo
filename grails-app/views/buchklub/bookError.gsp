@@ -24,7 +24,7 @@
         </table>
     </div>
     <div id="person-error">
-        <p>Das Buch ist schon vorgeschlagen worden. Bitte wählen Sie ein anderes Buch.</p>
+        <p>Das Buch ist schon vorgeschlagen worden oder der Titel ist zu lang. Bitte wählen Sie ein anderes Buch.</p>
     </div>
 
 </body>

@@ -8,7 +8,7 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <asset:stylesheet src="updatePage.css"/>
-
+    <asset:javascript src="updatePage.js"/>
     <script language="JavaScript">
     function fillFields() {
         document.getElementById("booktitle").value = "${treffen.buch.titel}";
@@ -33,7 +33,6 @@
             }
         }
         document.getElementById("meetingpoint").value = "${treffen.treffpunkt}";
-        document.getElementById("doodlelink").value = "${treffen.doodlelink}";
     }
     </script>
 
@@ -70,7 +69,7 @@
                     <ul>
                         <li>
                             <label>Datum</label>
-                            <input id="date" name="date" type="date">
+                            <input id="date" name="date" type="date" onchange="checkDate()" required>
                         </li>
                         <li>
                             <label>Name: * </label>
@@ -94,7 +93,7 @@
                     </ul>
                 </section>
                 <section>
-                    <p> <button class="updateButton" type="submit">Speichern</button> </p>
+                    <p> <button class="updateButton" type="submit" onclick="checkNotNullAndLength()">Speichern</button> </p>
                 </section>
             </g:form>
         </div>

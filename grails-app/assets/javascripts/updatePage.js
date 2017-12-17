@@ -1,12 +1,4 @@
-function createNewEvent() {
-    document.getElementById("newEventForm").style.display = "block";
-}
-
-function closeForm(){
-    document.getElementById("newEventForm").style.display = "none";
-}
-
-function checkNotNull() {
+function checkNotNullAndLength() {
     var booktitle = document.getElementById("booktitle").value;
     var author = document.getElementById("bookauthor").value;
     var name = document.getElementById("names").value;
@@ -29,6 +21,15 @@ function checkNotNull() {
     if(author.length > 255){
         alert("Autorenname zu lang. Der Name wird nicht gespeichert");
     }
+    var bookdescription = document.getElementById("bookdescription").value;
+    var meetingpoint = document.getElementById("meetingpoint").value;
+    if(bookdescription.length > 255){
+        alert("Buchbeschreibung zu lang. Die Beschreibung wird nicht gespeichert");
+    }
+    if(meetingpoint.length > 255){
+        alert("Treffpunkt zu lang. Der Treffpunkt wird nicht gespeichert");
+    }
+
 }
 
 function checkDate() {
