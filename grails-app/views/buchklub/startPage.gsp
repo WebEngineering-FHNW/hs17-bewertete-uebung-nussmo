@@ -25,38 +25,10 @@
                         <h2>Neuen Event erfassen</h2>
                         <p>Bitte gebt das Datum, das Buch und euren Namen an. Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
                         <section>
-                                <legend>Buch</legend>
-                                <ul>
-                                    <li>
-                                        <label>Titel: * </label>
-                                        <input id = "booktitle" name="booktitle" type="text" onchange="checkOk()" required>
-                                    </li>
-                                    <li>
-                                        <label>Author: * </label>
-                                        <input id="bookauthor" name="bookauthor" type="text" onchange="checkOk()" required>
-                                    </li>
-                                </ul>
+                            <tmpl:book_template/>
                         </section>
                         <section>
-                            <legend>Organisatorisches</legend>
-                            <ul>
-                                <li>
-                                    <label>Datum: * </label>
-                                    <input id="date" name = "date" type="date" onchange="checkDate()" required>
-                                </li>
-                                <li>
-                                    <label>Name: * </label>
-                                    <select id="names" name="namen" required>
-                                        <option disabled selected value>--</option>
-                                        <option value="Lena">Lena</option>
-                                        <option value="Linda">Linda</option>
-                                        <option value="Lara">Lara</option>
-                                        <option value="Tina">Tina</option>
-                                        <option value="Fabi">Fabi</option>
-                                        <option value="Moni">Moni</option>
-                                    </select>
-                                </li>
-                            </ul>
+                            <tmpl:organisation_template/>
                         </section>
                         <section>
                             <p> <button class="speichern" type="submit" onclick="checkNotNull()">Speichern</button> </p>

@@ -24,39 +24,15 @@
                 <h2>Event vom ${treffen.datum.dateString} bearbeiten</h2>
                 <p>Pflichtfleder sind durch ein <strong><abbr title="required">*</abbr></strong> gekennzeichnet.</p>
                 <section>
-                    <h3>Buch</h3>
+                    <tmpl:book_template/>
                     <ul>
-                        <li>
-                            <label>Titel: * </label>
-                            <input id = "booktitle" name = "booktitle" type="text" onchange="checkOk()" required>
-                        </li>
-                        <li>
-                            <label>Author: * </label>
-                            <input id="bookauthor" name = "bookauthor" type="text" onchange="checkOk()" required>
-                        </li>
                         <li>
                             <label>Beschreibung:  </label>
                             <textarea id="bookdescription" name = "bookdescription" onchange="checkOk()" rows="4" cols="50"></textarea>
                         </li>
                     </ul>
-                    <h3>Organisatorisches</h3>
+                    <tmpl:organisation_template/>
                     <ul>
-                        <li>
-                            <label>Datum</label>
-                            <input id="date" name="date" type="date" onchange="checkDate()" required>
-                        </li>
-                        <li>
-                            <label>Name: * </label>
-                            <select id="names" name="namen" required>
-                                <option disabled selected value>--</option>
-                                <option value="Lena">Lena</option>
-                                <option value="Linda">Linda</option>
-                                <option value="Lara">Lara</option>
-                                <option value="Tina">Tina</option>
-                                <option value="Fabi">Fabi</option>
-                                <option value="Moni">Moni</option>
-                            </select>
-                        </li>
                         <li>
                             <label>Treffpunkt</label>
                             <input id="meetingpoint" name="meetingpoint" type="text" onchange="checkOk()">
