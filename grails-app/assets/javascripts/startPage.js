@@ -45,6 +45,27 @@ function checkDate() {
         if (!pattern.test(date)) {
             alert("Das Datum hat ein falsches Format! Bitte yyyy-mm-dd verwenden. Bei Nichtbeachtung der Warnung können falsche Daten gespeichert werden.");
             document.getElementById("date").style.borderColor = "red";
+        }else{
+            document.getElementById("date").style.borderColor = "green";
         }
+    }
+}
+
+function checkOk(){
+    var booktitle = document.getElementById("booktitle").value;
+    var author = document.getElementById("bookauthor").value;
+    var name = document.getElementById("names").value;
+    var date = document.getElementById("date").value;
+    if(booktitle!="" && booktitle.length < 255){
+        document.getElementById("booktitle").style.borderColor = "green";
+    }
+    if (author!="" && author.length < 255) {
+        document.getElementById("bookauthor").style.borderColor = "green";
+    }
+    if(name != ""){
+        document.getElementById("names").style.borderColor = "green";
+    }
+    if(date != ""){
+        document.getElementById("date").style.borderColor = "green";
     }
 }

@@ -54,15 +54,15 @@
                     <ul>
                         <li>
                             <label>Titel: * </label>
-                            <input id = "booktitle" name = "booktitle" type="text" required>
+                            <input id = "booktitle" name = "booktitle" type="text" onchange="checkOk()" required>
                         </li>
                         <li>
                             <label>Author: * </label>
-                            <input id="bookauthor" name = "bookauthor" type="text" required>
+                            <input id="bookauthor" name = "bookauthor" type="text" onchange="checkOk()" required>
                         </li>
                         <li>
                             <label>Beschreibung:  </label>
-                            <textarea id="bookdescription" name = "bookdescription" rows="4" cols="50"></textarea>
+                            <textarea id="bookdescription" name = "bookdescription" onchange="checkOk()" rows="4" cols="50"></textarea>
                         </li>
                     </ul>
                     <h3>Organisatorisches</h3>
@@ -85,7 +85,7 @@
                         </li>
                         <li>
                             <label>Treffpunkt</label>
-                            <input id="meetingpoint" name="meetingpoint" type="text">
+                            <input id="meetingpoint" name="meetingpoint" type="text" onchange="checkOk()">
                         </li>
                     </ul>
                     <ul>
