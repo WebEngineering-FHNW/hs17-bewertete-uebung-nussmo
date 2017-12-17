@@ -24,8 +24,7 @@
         </table>
     </div>
     <div id="person-error">
-        <p>Oje, die Person, die sie gewählt haben, existiert nicht mehr in der Datenbank</p>
-        <p>Wenden Sie sich bitte an den Administrator. </p>
+        <output>${errorInstance.message}</output>
     </div>
 
 </body>
