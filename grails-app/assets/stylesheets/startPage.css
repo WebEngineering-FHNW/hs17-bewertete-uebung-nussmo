@@ -1,3 +1,5 @@
+/*css styling for startPage.gsp*/
+/*overview table*/
 #mainTable {
     border-collapse: collapse;
     width: 100%;
@@ -22,6 +24,7 @@
     text-align: center;
 }
 
+/*create new event form*/
 #newEventForm {
     display: none;
     position: absolute;

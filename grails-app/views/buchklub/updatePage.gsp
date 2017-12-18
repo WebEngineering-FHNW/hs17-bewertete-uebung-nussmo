@@ -43,7 +43,7 @@
                     </ul>
                 </section>
                 <section>
-                    <p> <button class="updateButton" type="submit" onclick="checkNotNullAndLengthUpdate()">Speichern</button> </p>
+                    <p> <button class="updateButton" type="submit" onclick="checkNotEmptyUpdate()">Speichern</button> </p>
                 </section>
             </g:form>
         </div>

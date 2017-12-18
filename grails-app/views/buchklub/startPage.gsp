@@ -2,6 +2,8 @@
 <html lang="en" class="no-js">
 <head>
 
+    <!--TODO: https://www.w3schools.com/html/html_responsive.asp-->
+
     <title>
         Buchklub
     </title>
@@ -31,7 +33,7 @@
                             <tmpl:organisation_template/>
                         </section>
                         <section>
-                            <p> <button class="speichern" type="submit" onclick="checkNotNull()">Speichern</button> </p>
+                            <p> <button class="speichern" type="submit" onclick="checkNotEmpty()">Speichern</button> </p>
                         </section>
                     </g:form>
                 </div>

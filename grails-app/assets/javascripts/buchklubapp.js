@@ -1,12 +1,15 @@
+/*open the modal form when newEventButton is pressed*/
 function createNewEvent() {
     document.getElementById("newEventForm").style.display = "block";
 }
 
+/*close the modal form when X is pressed*/
 function closeForm(){
     document.getElementById("newEventForm").style.display = "none";
 }
 
-function checkNotNull() {
+/*give the user visual (red) feedback if input is incorrect*/
+function checkNotEmpty() {
     var booktitle = document.getElementById("booktitle").value;
     var author = document.getElementById("bookauthor").value;
     var name = document.getElementById("names").value;
@@ -33,8 +36,9 @@ function checkNotNull() {
     }
 }
 
-function checkNotNullAndLengthUpdate() {
-    checkNotNullAndLength();
+/*extend checkNotEmpty-function with update fields, give the user visual (red) feedback if input is incorrect*/
+function checkNotEmptyUpdate() {
+    checkNotEmpty();
     var bookdescription = document.getElementById("bookdescription").value;
     var meetingpoint = document.getElementById("meetingpoint").value;
     if(bookdescription.length > 255){
@@ -47,6 +51,8 @@ function checkNotNullAndLengthUpdate() {
     }
 }
 
+/*Safari and IE do not support input type = "date". Therefore a Regex-check for correct formatting is needed.
+* inform the user if date is in past.*/
 function checkDate() {
     var date = document.getElementById("date").value;
     if(date != ""){
@@ -56,7 +62,7 @@ function checkDate() {
             alert("Vorsicht! Das Datum liegt in der Vergangenheit. Sind Sie sicher, dass Sie dieses Datum wählen wollen?");
             document.getElementById("date").style.borderColor = "red";
         }
-        //https://www.regexpal.com/96683
+        //EXTERNAL: https://www.regexpal.com/96683
         const pattern = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
         if (!pattern.test(date)) {
             alert("Das Datum hat ein falsches Format! Bitte yyyy-mm-dd verwenden. Bei Nichtbeachtung der Warnung können falsche Daten gespeichert werden.");
@@ -67,6 +73,7 @@ function checkDate() {
     }
 }
 
+/*give user visual (green) feedback if input is correct*/
 function checkOk(){
     var booktitle = document.getElementById("booktitle").value;
     var author = document.getElementById("bookauthor").value;
@@ -86,6 +93,7 @@ function checkOk(){
     }
 }
 
+/*extends checkOK-function with update fields, give user visual (green) feedback if input is correct*/
 function checkOkUpdate(){
     checkOk();
     var bookdescription = document.getElementById("bookdescription").value;
@@ -98,6 +106,7 @@ function checkOkUpdate(){
     }
 }
 
+/*fill fields in update form with respective data from database*/
 function fillFields(titel, author, description, datum, name, treffpunkt) {
     document.getElementById("booktitle").value = titel;
 
@@ -105,7 +114,7 @@ function fillFields(titel, author, description, datum, name, treffpunkt) {
     if(description != 'null'){
         document.getElementById("bookdescription").value = description;
     }
-    //https://stackoverflow.com/questions/1001937/auto-insert-date-and-time-in-form-input-field
+    //EXTERNAL: https://stackoverflow.com/questions/1001937/auto-insert-date-and-time-in-form-input-field
     var date = datum;
     var day = date.substr(0,2);
     var month = date.substr(3,2);
@@ -113,7 +122,7 @@ function fillFields(titel, author, description, datum, name, treffpunkt) {
     year = "20" + year;
     var tempdate = year + "-" + month + "-" + day;
     document.getElementById("date").value = tempdate;
-    //https://stackoverflow.com/questions/7373058/changing-the-selected-option-of-an-html-select-element
+
     var tempname = name;
     var selection = document.getElementById("names");
     var options = selection.options;
