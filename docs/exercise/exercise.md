@@ -35,7 +35,12 @@ Project description: /static/DescriptionBuchklubapp.html
 
 External contributions:
 
-Other comments: 
+Other comments: Safari und IE unterstützen das html input feld date nicht.
+Somit können bei der Benutzung der App über Safari und IE, anders als z.B. bei
+Firefox, im Datumsfeld beliegige Zeichen eingegeben werden. Deshalb musste ich für
+das Datumsfeld eine Überprüfung mit REGEX durchführen und ein Abfangen und Weiterleiten
+auf eine Fehlerseite einfügen, falls trotz Wahrnung falsch formatierte Datumeingaben 
+bei der Benutzung von Safari entstehen. 
 
 I'm particular proud of:
 

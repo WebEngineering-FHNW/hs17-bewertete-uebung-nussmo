@@ -104,7 +104,7 @@ class BuchklubControllerSpec extends Specification {
         when:
         params.booktitle = "Titel"
         params.bookauthor = "Author"
-        params.namen = "Mia";
+        params.namen = "Lena";
         params.date = "24.12.2017"
 
         buchklubController.saveevent()
@@ -113,4 +113,18 @@ class BuchklubControllerSpec extends Specification {
         view == '/buchklub/errorPage'
     }
 
+    /*wrongly formatted date*/
+    @Unroll
+    void "test saving character in date"() {
+        when:
+        params.booktitle = "Titel"
+        params.bookauthor = "Author"
+        params.namen = "Lena";
+        params.date = "abcd"
+
+        buchklubController.saveevent()
+
+        then:
+        view == '/buchklub/errorPage'
+    }
 }

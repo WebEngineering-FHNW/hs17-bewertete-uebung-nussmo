@@ -2,8 +2,6 @@
 <html lang="en" class="no-js">
 <head>
 
-    <!--TODO: https://www.w3schools.com/html/html_responsive.asp-->
-
     <title>
         Buchklub
     </title>
