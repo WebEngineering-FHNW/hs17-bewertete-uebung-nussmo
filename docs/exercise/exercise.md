@@ -47,4 +47,36 @@ I'm particular proud of:
 
 ## Project grading 
 
-< to be filled by lecturer>
+Description is ok and fully valid. The style with divs and ids is ok, while the use
+of semantic tags would have been even nicer.
+The application works nicely.
+
+Functionality: 
+Basic Master-Detail Navigation. CRUD user input. 
+Very nice input validation with client-side interactivity on value change.
+Small domain with two entities and one relation.
+
+Engineering:
+Proper commit log.
+Nicely done tests! (I first expected some more integration tests but you managed
+to test all important pieces via unit tests. This is even better!)
+The HTML is using a duplication of ids for iconshow, iconupdate, iconremove.
+Comments are ok (a bit sparse in the domain/controller part but nice in the JS code.)
+Naming is ok.
+Duplication is nicely factored out into templates.
+Side note: in industrial-strength applications, one would be a little bit more defensive
+when accessing request parameters in the controller as they might not be supplied.
+
+Since we already hit the ceiling, I spare the effort of grading any extra points.
+
+Congratulations!
+You created a full, distributed, DB-backed, interactive web application from scratch
+all on your own. Moreover, you included comprehensive testing and you have shown 
+very good engineering practices particularly in testing, commits, and factorization! 
+If you ever need to show some of your work when applying for a job, you can use
+this project as an example. 
+
+Total grade: 6.0
+
+
+
